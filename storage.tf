@@ -1,3 +1,3 @@
 resource "google_storage_bucket" "tfstate" {
-    name = "jenkins-terraform-state"
+    name = "xander-the-harris-jenkins-terraform-state"
 }
