@@ -1,1 +1,1 @@
-variable credentials_file {}
+variable "credentials_file" {}
