@@ -1,8 +1,8 @@
 provider "google" {
   access_token = var.access_token
-  project      = "xander-the-harris-jenkins"
-  region       = "us-west-2"
-  zone         = "us-west-2a"
+  project      = var.project_id
+  region       = var.region
+  zone         = var.zone_id
 }
 
 terraform {
