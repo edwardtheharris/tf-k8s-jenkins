@@ -14,3 +14,10 @@ terraform {
     }
   }
 }
+
+terraform {
+  backend "gcs" {
+    bucket  = "xander-the-harris-jenkins-terraform-state"
+    prefix  = "terraform/state"
+  }
+}
