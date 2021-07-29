@@ -5,8 +5,7 @@ provider "google" {
 }
 
 terraform {
-  backend "gcs" {
-    bucket  = "xander-the-harris-jenkins-terraform-state"
-    prefix  = "terraform/state"
+  backend "local" {
+    path = "/tmp/terraform.tfstate"
   }
 }
