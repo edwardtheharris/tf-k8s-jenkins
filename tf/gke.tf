@@ -1,20 +1,5 @@
-variable "gke_username" {
-  default     = ""
-  description = "gke username"
-}
-
-variable "gke_password" {
-  default     = ""
-  description = "gke password"
-}
-
-variable "gke_num_nodes" {
-  default     = 2
-  description = "number of gke nodes"
-}
-
 # GKE cluster
-resource "google_container_cluster" "primary" {
+resource "google_container_cluster" "jenkins" {
   name     = "${var.project_id}-gke"
   location = var.region
   
@@ -30,9 +15,9 @@ resource "google_container_cluster" "primary" {
 
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "${google_container_cluster.primary.name}-node-pool"
+  name       = "${google_container_cluster.jenkins.name}-node-pool"
   location   = var.region
-  cluster    = google_container_cluster.primary.name
+  cluster    = google_container_cluster.jenkins.name
   node_count = var.gke_num_nodes
 
   node_config {
