@@ -22,7 +22,12 @@ provider "google" {
 }
 
 terraform {
-  backend "local" {
-    path = "/tmp/terraform.tfstate"
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "brick-house"
+
+    workspaces {
+      name = "jenkins-terraform-gcp"
+    }
   }
 }
