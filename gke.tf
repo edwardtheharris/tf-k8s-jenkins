@@ -1,6 +1,6 @@
 # GKE cluster
 resource "google_container_cluster" "jenkins" {
-  name     = "${var.project_id}-gke"
+  name     = "jenkins-gke"
   location = var.region
   
   # We can't create a cluster with no node pool defined, but we want to only use
@@ -14,7 +14,7 @@ resource "google_container_cluster" "jenkins" {
 }
 
 # Separately Managed Node Pool
-resource "google_container_node_pool" "primary_nodes" {
+resource "google_container_node_pool" "jenkins" {
   name       = "${google_container_cluster.jenkins.name}-node-pool"
   location   = var.region
   cluster    = google_container_cluster.jenkins.name
@@ -32,7 +32,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
     # preemptible  = true
     machine_type = "n1-standard-1"
-    tags         = ["gke-node", "${var.project_id}-gke"]
+    tags         = ["gke-node", "jenkins-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
     }
