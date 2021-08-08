@@ -9,11 +9,11 @@ output "gcp_project_id" {
 }
 
 output "gke_cluster_name" {
-  value       = gcp.gke_cluster_name
+  value       = module.gcp.gke_cluster_name
   description = "GKE Cluster Name"
 }
 
 output "gke_cluster_host" {
-  value       = gcp.gke_cluster_host
+  value       = module.gcp.gke_cluster_host
   description = "GKE Cluster Host"
 }
