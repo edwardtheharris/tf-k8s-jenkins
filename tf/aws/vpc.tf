@@ -12,6 +12,7 @@ resource "aws_subnet" "us-west-2a" {
   tags = {
     Name = "us-west-2a"
   }
+  vpc_id = aws_vpc.jenkins.id
 }
 
 resource "aws_subnet" "us-west-2b" {
@@ -20,6 +21,7 @@ resource "aws_subnet" "us-west-2b" {
   tags = {
     Name = "us-west-2b"
   }
+  vpc_id = aws_vpc.jenkins.id
 }
 
 resource "aws_subnet" "us-west-2c" {
@@ -28,6 +30,7 @@ resource "aws_subnet" "us-west-2c" {
   tags = {
     Name = "us-west-2c"
   }
+  vpc_id = aws_vpc.jenkins.id
 }
 
 resource "aws_subnet" "us-west-2d" {
@@ -36,4 +39,5 @@ resource "aws_subnet" "us-west-2d" {
   tags = {
     Name = "us-west-2d"
   }
+  vpc_id = aws_vpc.jenkins.id
 }
