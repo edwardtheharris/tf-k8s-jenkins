@@ -1,3 +1,7 @@
+variable "aws_region" {
+  description = "Region in which to deploy to AWS."
+}
+
 variable "gcp_access_token" {
   description = "Access token with which to access GCP."
 }
