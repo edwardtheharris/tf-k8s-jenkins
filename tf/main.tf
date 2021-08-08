@@ -11,4 +11,6 @@ terraform {
 
 module "gcp" {
   source = "./gcp"
+  region = var.gcp_region
+  zone_id = var.gcp_zone_id
 }
