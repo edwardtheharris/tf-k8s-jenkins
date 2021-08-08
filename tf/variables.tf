@@ -1,5 +1,13 @@
+variable "aws_access_key" {
+  description = "AWS access key id."
+}
+
 variable "aws_region" {
   description = "Region in which to deploy to AWS."
+}
+
+variable "aws_secret_key" {
+  description = "AWS secret access key."
 }
 
 variable "gcp_access_token" {
