@@ -9,11 +9,11 @@ output "gcp_project_id" {
 }
 
 output "gke_cluster_name" {
-  value       = gcp.google_container_cluster.jenkins.name
+  value       = gcp.gke_cluster_name
   description = "GKE Cluster Name"
 }
 
 output "gke_cluster_host" {
-  value       = gcp.google_container_cluster.jenkins.endpoint
+  value       = gcp.gke_cluster_host
   description = "GKE Cluster Host"
 }
