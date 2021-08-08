@@ -6,9 +6,13 @@ Terraform and other configuration required to deploy Jenkins to kubernetes in GC
 
 Will start out with a simple GKE cluster on which to deploy the intended Jenkins service.
 
+The code for this lives in `tf/gcp`.
+
 ## EKS
 
 Next we can add an EKS cluster.
+
+The code for this lives in `tf/aws`.
 
 ## k8s
 
