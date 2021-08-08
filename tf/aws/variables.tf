@@ -1,11 +1,11 @@
 variable "access_key" {
-    description = "Access key ID."
+  description = "Access key ID."
 }
 
 variable "region" {
-    description = "Region in which to deploy."
+  description = "Region in which to deploy."
 }
 
 variable "secret_key" {
-    description = "Secret access key."
+  description = "Secret access key."
 }

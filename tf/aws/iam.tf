@@ -1,19 +1,19 @@
 data "aws_iam_policy_document" "eks-cluster-assume-role" {
-    statement {
-        actions = [
-            "sts:AssumeRole"
-        ]
-        principals {
-            type = "Service"
-            identifiers = [
-                "eks.amazonaws.com"
-            ]
-        }
+  statement {
+    actions = [
+      "sts:AssumeRole"
+    ]
+    principals {
+      type = "Service"
+      identifiers = [
+        "eks.amazonaws.com"
+      ]
     }
+  }
 }
 
 resource "aws_iam_role" "eksClusterRole" {
-  name = "eksClusterRole"
+  name               = "eksClusterRole"
   assume_role_policy = data.aws_iam_policy_document.eks-cluster-assume-role.json
 }
 
