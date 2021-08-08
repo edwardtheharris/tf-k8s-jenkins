@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "brick-house"
 
     workspaces {
@@ -10,7 +10,9 @@ terraform {
 }
 
 module "gcp" {
-  source = "./gcp"
-  region = var.gcp_region
-  zone_id = var.gcp_zone_id
+  access_token = var.gcp_access_token
+  project_id   = var.gcp_project_id
+  region       = var.gcp_region
+  source       = "./gcp"
+  zone_id      = var.gcp_zone_id
 }
