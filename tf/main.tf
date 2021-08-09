@@ -9,12 +9,12 @@ terraform {
   }
 }
 
-module "aws" {
-  access_key = var.aws_access_key
-  region     = var.aws_region
-  secret_key = var.aws_secret_key
-  source     = "./aws"
-}
+# module "aws" {
+#   access_key = var.aws_access_key
+#   region     = var.aws_region
+#   secret_key = var.aws_secret_key
+#   source     = "./aws"
+# }
 
 module "gcp" {
   access_token = var.gcp_access_token
