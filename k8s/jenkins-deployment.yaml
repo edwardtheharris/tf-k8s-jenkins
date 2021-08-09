@@ -16,8 +16,10 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts-jdk11
         ports:
-        - containerPort: 8080
-        - containerPort: 50000
+        - name: http-port
+          containerPort: 8080
+        - name: jnlp-port
+          containerPort: 50000
         volumeMounts:
         - name: jenkins-home
           mountPath: /var/jenkins_home
